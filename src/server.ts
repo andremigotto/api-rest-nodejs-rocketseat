@@ -1,17 +1,6 @@
-import fastify from 'fastify'
 import { env } from './env'
-import { transactionsRoutes } from './routes/transactions'
-import cookie from "@fastify/cookie"
+import { app } from './app'
 
-const app = fastify()
-
-//Adding cookie for register
-app.register(cookie)
-
-//Adding routes for register
-app.register(transactionsRoutes, {
-  prefix: 'transactions',
-})
 
 app
   .listen({
